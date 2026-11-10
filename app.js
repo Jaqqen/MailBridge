@@ -7,7 +7,7 @@ import logger from 'morgan';
 import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(import.meta.dirname, 'views'));
