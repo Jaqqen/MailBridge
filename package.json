@@ -7,11 +7,18 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@azure/msal-node": "^7.2.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^7.0.2",
     "express": "^4.22.3",
+    "express-validator": "^7.3.2",
     "http-errors": "~1.6.3",
     "morgan": "^1.12.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
   }
 }

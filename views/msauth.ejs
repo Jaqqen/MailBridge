@@ -1,0 +1,16 @@
+<%- include('wrapper/html-header') %>
+<form class="flex-form" method="post">
+    <div class="flex-row">
+        <label for="login_name_hint">Email address:</label>
+        <input id="login_name_hint"
+               type="text"
+               name="<%= loginNameHintField %>"
+               placeholder="Type in your email address"/>
+    </div>
+    <button type="submit">Click to start token generation</button>
+</form>
+<ul>
+    <%- emailsHtml %>
+</ul>
+<%- include('wrapper/html-footer') %>
+

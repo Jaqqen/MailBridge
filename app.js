@@ -6,6 +6,8 @@ import logger from 'morgan';
 
 import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
+import msauthRouter from "./routes/msauth/msauthRouter.ts";
+import {Path} from "./routes/msauth/msauthRouterPaths.ts";
 
 const app = express();
 
@@ -21,6 +23,7 @@ app.use(express.static(path.join(import.meta.dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use(Path.fullRoot, msauthRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -3,10 +3,10 @@
 /**
  * Module dependencies.
  */
-
 import app from '../app.js';
 import createDebug from 'debug';
-import http from 'http';
+import https from 'https';
+import tlsConfig from "../src/config/tlsConfig.ts";
 
 const debug = createDebug('emailknowledgeagent:server');
 
@@ -21,7 +21,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+const server = https.createServer(tlsConfig, app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -82,7 +82,6 @@ function onError(error) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string'
