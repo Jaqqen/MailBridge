@@ -8,7 +8,7 @@ import createDebug from 'debug';
 import https from 'https';
 import tlsConfig from "../src/config/tlsConfig.ts";
 
-const debug = createDebug('emailknowledgeagent:server');
+const debug = createDebug('mailbridge:server');
 
 /**
  * Get port from environment and store in Express.

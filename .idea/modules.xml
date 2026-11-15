@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EmailKnowledgeAgent.iml" filepath="$PROJECT_DIR$/EmailKnowledgeAgent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MailBridge.iml" filepath="$PROJECT_DIR$/MailBridge.iml" />
     </modules>
   </component>
 </project>
