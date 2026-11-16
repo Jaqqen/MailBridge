@@ -5,8 +5,7 @@
  */
 import app from '../app.js';
 import createDebug from 'debug';
-import https from 'https';
-import tlsConfig from "../src/config/tlsConfig.ts";
+import http from 'http';
 
 const debug = createDebug('mailbridge:server');
 
@@ -21,13 +20,13 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = https.createServer(tlsConfig, app);
+const server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Listen on provided port, on loopback only (TLS is terminated by the reverse proxy).
  */
 
-server.listen(port);
+server.listen(port, process.env.HOST || '127.0.0.1');
 server.on('error', onError);
 server.on('listening', onListening);
 
