@@ -12,6 +12,9 @@ import {Path} from "./routes/msauth/msauthRouterPaths.ts";
 
 const app = express();
 
+// requests arrive via the local reverse proxy, which terminates TLS
+app.set('trust proxy', 'loopback');
+
 // view engine setup
 app.set('views', path.join(import.meta.dirname, 'views'));
 app.set('view engine', 'ejs');
